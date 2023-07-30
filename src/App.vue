@@ -6,6 +6,12 @@
     <a-layout>
       <a-layout-content>
         <div id="cesiumContainer"></div>
+        <div class="step">
+          <StepControl codePath="/pages/other/function/skyBox.js"></StepControl>
+        </div>
+        <div class="control">
+          <router-view></router-view>
+        </div>
       </a-layout-content>
     </a-layout>
   </a-layout>
@@ -13,8 +19,16 @@
 
 <script lang="ts" setup>
 import { onMounted } from "vue";
-import Menu from "./components/menu.vue";
+import Menu from "/@/components/menu.vue";
+import StepControl from "/@/components/stepControl.vue";
 import * as Cesium from "cesium";
+// 默认到中国上空
+Cesium.Camera.DEFAULT_VIEW_RECTANGLE = Cesium.Rectangle.fromDegrees(
+  75.0, // 东
+  0.0, // 南
+  140.0, // 西
+  60.0 // 北
+);
 onMounted(() => {
   init();
 });
@@ -28,21 +42,21 @@ const init = async () => {
     baseLayerPicker: false,
     geocoder: false,
     animation: false,
-    
+    baseLayer: false,
   });
-  let token = "7662547efd290de36809ce5ca59ac1e1";
+  window.viewer = viewer;
   viewer.cesiumWidget.creditContainer.style.display = "none";
   //加载arc地图
   const arcGisMap = await Cesium.ArcGisMapServerImageryProvider.fromUrl(
     "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"
   );
   viewer.imageryLayers.addImageryProvider(arcGisMap);
-
 };
 </script>
 
 <style scoped>
 .ant-layout-content {
+  position: relative;
   height: 100vh;
 }
 .ant-layout-sider {
@@ -51,5 +65,16 @@ const init = async () => {
 }
 #cesiumContainer {
   height: 100%;
+}
+.control {
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+.step {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 </style>

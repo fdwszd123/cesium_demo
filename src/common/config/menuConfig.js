@@ -6,6 +6,7 @@ export const MENU_CONFIG = [
       {
         id: "1-1",
         title: "下雪",
+        path: "/particle/snow",
       },
       {
         id: "1-2",
@@ -144,6 +145,24 @@ export const MENU_CONFIG = [
       {
         id: "8-2",
         title: "高程分析",
+      },
+    ],
+  },
+  {
+    id: "9",
+    title: "其他",
+    children: [
+      {
+        id: "9-1",
+        title: "天空盒",
+        path: "/other/skyBox",
+        fileName: "9-1_skyBox.js",
+      },
+      {
+        id: "9-2",
+        title: "地形数据",
+        path: "/other/terrain",
+        fileName: "9-2_terrain.js",
       },
     ],
   },
