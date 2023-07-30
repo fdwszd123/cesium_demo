@@ -11,11 +11,18 @@
 <script setup>
 import "highlight.js/styles/androidstudio.css";
 import { getMethodContent } from "/@/utils/requestMethodContent.js";
-
+import { watch, ref } from "vue";
+const codeContent = ref("");
 const props = defineProps(["fileName"]);
-const filePath = `/method/${props.fileName}`;
 
-const codeContent = await getMethodContent(filePath);
+watch(
+  () => props.fileName,
+  async (val) => {
+    const filePath = `/method/${val}`;
+    codeContent.value = await getMethodContent(filePath);
+  },
+  { immediate: true }
+);
 </script>
 
 <style scoped>

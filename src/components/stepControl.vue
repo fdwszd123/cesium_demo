@@ -12,7 +12,7 @@
               <span>
                 <a-tooltip title="查看相关代码">
                   <a-button
-                    @click="viewCode(record)"
+                    @click="viewCode(record.key)"
                     type="primary"
                     shape="circle"
                     :icon="h(FileSearchOutlined)"
@@ -51,7 +51,7 @@ import { message } from "ant-design-vue";
 import CodeBlock from "/@/components/codeBlock.vue";
 import { h, ref, Suspense, watch, reactive, toRefs } from "vue";
 import { useRoute } from "vue-router";
-import { getMenuItemByPath } from "/@/utils/menu";
+import { getMenuItemByPath, getMenuItemById } from "/@/utils/menu";
 const route = useRoute();
 const fileName = ref();
 const effect = reactive({
@@ -85,7 +85,7 @@ watch(
       if (flag) {
         effect.ids.push(menuItem);
       }
-      fileName.value = menuItem.fileName || null;
+      // fileName.value = menuItem.fileName || null;
     }
   },
   { immediate: true }
@@ -108,6 +108,8 @@ watch(
 );
 
 const viewCode = (id) => {
+  // const { fileName } = getMenuItemById(id);
+  fileName.value = getMenuItemById(id).fileName;
   open.value = true;
 };
 const delEffect = (id) => {
