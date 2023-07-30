@@ -77,4 +77,20 @@ const init = async () => {
   top: 0;
   left: 0;
 }
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #000c17;
+  border-radius: 5px;
+}
+
+* {
+  scrollbar-width: 10px;
+  scrollbar-base-color: green;
+  scrollbar-track-color: red;
+  scrollbar-arrow-color: blue;
+}
 </style>

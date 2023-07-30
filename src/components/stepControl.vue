@@ -1,7 +1,7 @@
 <template>
   <div class="step-wrap">
     <a-collapse :ghost="true" :bordered="false">
-      <a-collapse-panel key="1" header="操作消除">
+      <a-collapse-panel key="1" header="操作撤销">
         <a-table
           :pagination="false"
           :dataSource="dataSource"
