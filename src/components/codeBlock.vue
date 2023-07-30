@@ -14,12 +14,13 @@ import { getMethodContent } from "/@/utils/requestMethodContent.js";
 import { watch, ref } from "vue";
 const codeContent = ref("");
 const props = defineProps(["fileName"]);
-
+const emits = defineEmits(["getCode"]);
 watch(
   () => props.fileName,
   async (val) => {
     const filePath = `/method/${val}`;
     codeContent.value = await getMethodContent(filePath);
+    emits("getCode", codeContent.value);
   },
   { immediate: true }
 );

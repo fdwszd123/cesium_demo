@@ -7,6 +7,7 @@ const terrain = new Cesium.Terrain(
 );
 const viewer = window.viewer;
 viewer.scene.setTerrain(terrain);
+
 </script>
 
 <style>

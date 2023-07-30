@@ -37,7 +37,7 @@
   </div>
   <a-modal width="1000px" v-model:open="open" title="示例代码">
     <Suspense>
-      <CodeBlock :fileName="fileName"></CodeBlock>
+      <CodeBlock @getCode="getCode" :fileName="fileName"></CodeBlock>
     </Suspense>
     <template #footer>
       <a-button type="primary" @click="copyCode">复制代码</a-button>
@@ -49,9 +49,10 @@
 import { FileSearchOutlined, DeleteOutlined } from "@ant-design/icons-vue";
 import { message } from "ant-design-vue";
 import CodeBlock from "/@/components/codeBlock.vue";
-import { h, ref, Suspense, watch, reactive, toRefs } from "vue";
+import { h, ref, Suspense, watch, reactive, toRefs, toRef } from "vue";
 import { useRoute } from "vue-router";
 import { getMenuItemByPath, getMenuItemById } from "/@/utils/menu";
+import DestoryEffect from "/@/utils/destoryEffect";
 const route = useRoute();
 const fileName = ref();
 const effect = reactive({
@@ -59,7 +60,7 @@ const effect = reactive({
 });
 const open = ref(false);
 const dataSource = ref([]);
-
+let code = "";
 const columns = [
   {
     title: "效果名称",
@@ -113,6 +114,7 @@ const viewCode = (id) => {
   open.value = true;
 };
 const delEffect = (id) => {
+  DestoryEffect.destory(id);
   for (let i = 0; i < effect.ids.length; i++) {
     if (effect.ids[i].id === id) {
       const { ids } = toRefs(effect);
@@ -120,7 +122,9 @@ const delEffect = (id) => {
     }
   }
 };
-
+const getCode = (text) => {
+  code = text;
+};
 const copyCode = () => {
   let textarea = document.createElement("textarea");
   document.body.appendChild(textarea);

@@ -7,7 +7,7 @@
       <a-layout-content>
         <div id="cesiumContainer"></div>
         <div class="step">
-          <StepControl codePath="/pages/other/function/skyBox.js"></StepControl>
+          <StepControl></StepControl>
         </div>
         <div class="control">
           <router-view></router-view>
