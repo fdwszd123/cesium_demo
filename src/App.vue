@@ -22,13 +22,9 @@ import { onMounted } from "vue";
 import Menu from "/@/components/menu.vue";
 import StepControl from "/@/components/stepControl.vue";
 import * as Cesium from "cesium";
+import { DEFAULT_VIEW_RECTANGLE } from "/@/common/config/cesium.js";
 // 默认到中国上空
-Cesium.Camera.DEFAULT_VIEW_RECTANGLE = Cesium.Rectangle.fromDegrees(
-  75.0, // 东
-  0.0, // 南
-  140.0, // 西
-  60.0 // 北
-);
+Cesium.Camera.DEFAULT_VIEW_RECTANGLE = DEFAULT_VIEW_RECTANGLE;
 onMounted(() => {
   init();
 });
@@ -51,6 +47,7 @@ const init = async () => {
     "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"
   );
   viewer.imageryLayers.addImageryProvider(arcGisMap);
+
 };
 </script>
 

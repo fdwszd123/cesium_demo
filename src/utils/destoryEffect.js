@@ -1,6 +1,24 @@
 import { message } from "ant-design-vue";
+import { DEFAULT_VIEW_RECTANGLE } from "/@/common/config/cesium.js";
+
 import * as Cesium from "cesium";
 const destoryMap = {
+  "2-1": {
+    name: "飞行",
+    method: () => {
+      window.viewer.camera.flyHome(3);
+      return 1;
+    },
+  },
+  "5-1": {
+    name: "道路闪烁",
+    method: () => {
+      window.viewer.dataSources.removeAll();
+      window.viewer.camera.flyHome(3);
+
+      return 1;
+    },
+  },
   "9-1": {
     name: "天空盒",
     method: () => {

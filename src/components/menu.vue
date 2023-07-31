@@ -3,6 +3,7 @@
     v-model:selectedKeys="defaultSelect"
     theme="dark"
     mode="inline"
+    @click="handleMenuClick"
     v-model:openKeys="openKeys"
   >
     <a-sub-menu v-for="menu in MENU_CONFIG" :key="menu.id">
@@ -32,18 +33,26 @@ const route = useRoute();
 const linkTo = (path) => {
   router.push(path || "/particle/snow");
 };
+let currentKey = "";
 watch(
   () => route.path,
   (path, prevPath) => {
     if (path && path != "/") {
       const selectItemId = getMenuItemByPath(path).id;
       if (selectItemId) {
+        currentKey = selectItemId;
         defaultSelect.value = [selectItemId];
       }
     }
   },
   { immediate: true }
 );
+const handleMenuClick = (item) => {
+  const { key } = item;
+  if (key != currentKey) {
+    window.viewer.camera.flyHome(3);
+  }
+};
 </script>
 
 <style scoped></style>

@@ -29,6 +29,8 @@ export const MENU_CONFIG = [
       {
         id: "2-1",
         title: "飞行",
+        path: "/camera/fly",
+        fileName: "2-1_fly.js",
       },
     ],
   },
@@ -67,6 +69,8 @@ export const MENU_CONFIG = [
       {
         id: "5-1",
         title: "道路闪烁",
+        path: "/material/highLightRoad",
+        fileName: "2-1_highLightRoad.js",
       },
       {
         id: "5-2",
