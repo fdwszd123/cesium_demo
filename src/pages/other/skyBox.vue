@@ -1,7 +1,11 @@
 <template>
-  <a-button class="next" type="primary" @click="nextSkyBox"
-    >查看下一个场景<right-circle-outlined
-  /></a-button>
+  <a-collapse :ghost="true" :bordered="false">
+    <a-collapse-panel key="1" header="设置">
+      <a-button class="next" type="primary" @click="nextSkyBox"
+        >查看下一个场景<right-circle-outlined
+      /></a-button>
+    </a-collapse-panel>
+  </a-collapse>
 </template>
 
 <script setup>
@@ -24,5 +28,10 @@ const nextSkyBox = () => {
 <style scoped>
 .next {
   background-color: rgba(22, 119, 255, 0.5);
+}
+
+:deep(.ant-collapse-item .ant-collapse-header) {
+  color: #fff; /* 修改标题的字体颜色为红色 */
+  font-size: 16px;
 }
 </style>

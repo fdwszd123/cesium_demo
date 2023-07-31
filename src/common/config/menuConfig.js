@@ -170,4 +170,16 @@ export const MENU_CONFIG = [
       },
     ],
   },
+  {
+    id: "10",
+    title: "cesium官方沙盒",
+    children: [
+      {
+        id: "10-1",
+        title: "3D_Models",
+        path: "/sandcastle/3dModel",
+        fileName: "10-1_3D_Model.js",
+      },
+    ],
+  },
 ];

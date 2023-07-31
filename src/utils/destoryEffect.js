@@ -1,8 +1,16 @@
 import { message } from "ant-design-vue";
 import { DEFAULT_VIEW_RECTANGLE } from "/@/common/config/cesium.js";
-
+import { reoveEntityByName } from "./cesium";
 import * as Cesium from "cesium";
 const destoryMap = {
+  "10-1": {
+    name: "3D_Models",
+    method: () => {
+      reoveEntityByName("3D_MODEL");
+      window.viewer.camera.flyHome(3);
+      return 1;
+    },
+  },
   "2-1": {
     name: "飞行",
     method: () => {

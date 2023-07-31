@@ -4,7 +4,11 @@ const particle_snow = () => import("/@/pages/particle/snow.vue");
 const other_skyBox = () => import("/@/pages/other/skyBox.vue");
 const other_terrain = () => import("/@/pages/other/terrain.vue");
 const camera_fly = () => import("/@/pages/camera/fly.vue");
-const material_highLightRoad = () => import("/@/pages/material/highLightRoad.vue");
+const material_highLightRoad = () =>
+  import("/@/pages/material/highLightRoad.vue");
+
+const sandcastle_3dModel = () => import("/@/pages/sandcastle/3dModel.vue");
+
 const routes = [
   {
     path: "/particle",
@@ -57,7 +61,18 @@ const routes = [
         name: "material_highLightRoad",
         component: material_highLightRoad,
       },
-     
+    ],
+  },
+  {
+    path: "/sandcastle",
+    name: "sandcastle",
+    redirect: "/sandcastle/3dModel",
+    children: [
+      {
+        path: "3dModel",
+        name: "sandcastle_3dModel",
+        component: sandcastle_3dModel,
+      },
     ],
   },
 ];

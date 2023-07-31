@@ -10,7 +10,6 @@ import hljsVuePlugin from "@highlightjs/vue-plugin";
 const app = createApp(App);
 //注册自定义指令
 
-
 app.use(router);
 //注册组件
 app.use(hljsVuePlugin);
