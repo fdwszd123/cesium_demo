@@ -8,6 +8,7 @@ const material_highLightRoad = () =>
   import("/@/pages/material/highLightRoad.vue");
 
 const sandcastle_3dModel = () => import("/@/pages/sandcastle/3dModel.vue");
+const sandcastle_3dTiles = () => import("/@/pages/sandcastle/3dTiles.vue");
 
 const routes = [
   {
@@ -72,6 +73,11 @@ const routes = [
         path: "3dModel",
         name: "sandcastle_3dModel",
         component: sandcastle_3dModel,
+      },
+      {
+        path: "3dTiles",
+        name: "sandcastle_3dTiles",
+        component: sandcastle_3dTiles,
       },
     ],
   },

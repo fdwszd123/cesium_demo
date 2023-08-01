@@ -10,7 +10,7 @@
           <StepControl></StepControl>
         </div>
         <div class="control">
-          <router-view></router-view>
+          <Suspense><router-view></router-view></Suspense>
         </div>
       </a-layout-content>
     </a-layout>
@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from "vue";
+import { onMounted, Suspense } from "vue";
 import Menu from "/@/components/menu.vue";
 import StepControl from "/@/components/stepControl.vue";
 import * as Cesium from "cesium";
@@ -47,7 +47,6 @@ const init = async () => {
     "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"
   );
   viewer.imageryLayers.addImageryProvider(arcGisMap);
-
 };
 </script>
 
