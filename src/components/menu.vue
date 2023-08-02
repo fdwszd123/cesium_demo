@@ -3,7 +3,6 @@
     v-model:selectedKeys="defaultSelect"
     theme="dark"
     mode="inline"
-    @click="handleMenuClick"
     v-model:openKeys="openKeys"
   >
     <a-sub-menu v-for="menu in MENU_CONFIG" :key="menu.id">
@@ -47,12 +46,7 @@ watch(
   },
   { immediate: true }
 );
-const handleMenuClick = (item) => {
-  const { key } = item;
-  if (key != currentKey) {
-    window.viewer.camera.flyHome(3);
-  }
-};
+
 </script>
 
 <style scoped></style>

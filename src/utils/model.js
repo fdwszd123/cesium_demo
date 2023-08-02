@@ -1,6 +1,6 @@
 import { modelFiles } from "/@/common/3D_models/files";
 import * as Cesium from "cesium";
-import { reoveEntityByName } from "./cesium";
+import { removeEntityByName } from "./cesium";
 
 export const getModeItemById = (id) => {
   for (let i = 0; i < modelFiles.length; i++) {
@@ -14,7 +14,7 @@ export const getModeItemById = (id) => {
 
 export const createModel = (path, height = 1000) => {
   const viewer = window.viewer;
-  reoveEntityByName("3D_MODEL");
+  removeEntityByName("3D_MODEL");
   const position = Cesium.Cartesian3.fromDegrees(
     -123.0744619,
     44.0503706,

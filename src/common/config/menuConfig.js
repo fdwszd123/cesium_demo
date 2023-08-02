@@ -185,7 +185,7 @@ export const MENU_CONFIG = [
         title: "3D_Tiles",
         path: "/sandcastle/3dTiles",
         fileName: "10-2_3D_Tiles.js",
-      },
+      }
     ],
   },
 ];

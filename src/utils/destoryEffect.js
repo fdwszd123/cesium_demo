@@ -1,12 +1,20 @@
 import { message } from "ant-design-vue";
 import { DEFAULT_VIEW_RECTANGLE } from "/@/common/config/cesium.js";
-import { reoveEntityByName } from "./cesium";
+import { removeEntityByName, removePrimitiveById } from "./cesium";
 import * as Cesium from "cesium";
 const destoryMap = {
+  "10-2": {
+    name: "3D_Tiles",
+    method: () => {
+      removePrimitiveById("3D_TILE");
+      window.viewer.camera.flyHome(3);
+      return 1;
+    },
+  },
   "10-1": {
     name: "3D_Models",
     method: () => {
-      reoveEntityByName("3D_MODEL");
+      removeEntityByName("3D_MODEL");
       window.viewer.camera.flyHome(3);
       return 1;
     },
