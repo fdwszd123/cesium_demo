@@ -1,8 +1,15 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-
+/*粒子*/
+// 下雪
 const particle_snow = () => import("/@/pages/particle/snow.vue");
+//下雨
 const particle_rain = () => import("/@/pages/particle/rain.vue");
+// 大雾
 const particle_fog = () => import("/@/pages/particle/fog.vue");
+// 火焰
+const particle_fire = () => import("/@/pages/particle/fire.vue");
+
+
 const other_skyBox = () => import("/@/pages/other/skyBox.vue");
 const other_terrain = () => import("/@/pages/other/terrain.vue");
 const camera_fly = () => import("/@/pages/camera/fly.vue");
@@ -34,6 +41,11 @@ const routes = [
         path: "fog",
         name: "particle_fog",
         component: particle_fog,
+      },
+      {
+        path: "fire",
+        name: "particle_fire",
+        component: particle_fire,
       },
     ],
   },

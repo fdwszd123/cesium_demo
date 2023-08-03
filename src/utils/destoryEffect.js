@@ -1,5 +1,6 @@
 import { message } from "ant-design-vue";
 import { DEFAULT_VIEW_RECTANGLE } from "/@/common/config/cesium.js";
+import FireEffect from "./fire";
 import {
   removeEntityByName,
   removePrimitiveById,
@@ -25,6 +26,16 @@ const destroyMap = {
     name: "fog",
     method: () => {
       removeStageById("fog_stage");
+      return 1;
+    },
+  },
+  "1-4": {
+    name: "fire",
+    method: () => {
+      removePrimitiveById("fire");
+      removeEntityByName("fire");
+      window.viewer.camera.flyHome(3);
+
       return 1;
     },
   },

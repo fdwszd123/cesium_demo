@@ -24,6 +24,8 @@ export const MENU_CONFIG = [
       {
         id: "1-4",
         title: "火焰",
+        path: "/particle/fire",
+        fileName: "1-4_fire.js",
       },
     ],
   },
