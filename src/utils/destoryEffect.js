@@ -6,7 +6,28 @@ import {
   removeStageById,
 } from "./cesium";
 import * as Cesium from "cesium";
-const destoryMap = {
+const destroyMap = {
+  "1-1": {
+    name: "snow",
+    method: () => {
+      removeStageById("snow_stage");
+      return 1;
+    },
+  },
+  "1-2": {
+    name: "rain",
+    method: () => {
+      removeStageById("rain_stage");
+      return 1;
+    },
+  },
+  "1-3": {
+    name: "fog",
+    method: () => {
+      removeStageById("fog_stage");
+      return 1;
+    },
+  },
   "10-3": {
     name: "feature_pick",
     method: () => {
@@ -76,10 +97,10 @@ const destoryMap = {
 class DestoryEffect {
   constructor() {
     this.viewer = window.viewer;
-    this.destoryMap = destoryMap;
+    this.destroyMap = destroyMap;
   }
   destory(id) {
-    let res = this.destoryMap[id].method();
+    let res = this.destroyMap[id].method();
     res ? message.success("删除成功") : message.error("删除失败");
   }
 }

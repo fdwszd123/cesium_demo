@@ -7,14 +7,19 @@ export const MENU_CONFIG = [
         id: "1-1",
         title: "下雪",
         path: "/particle/snow",
+        fileName: "1-1_snow.js",
       },
       {
         id: "1-2",
         title: "下雨",
+        path: "/particle/rain",
+        fileName: "1-2_rain.js",
       },
       {
         id: "1-3",
         title: "大雾",
+        path: "/particle/fog",
+        fileName: "1-3_fog.js",
       },
       {
         id: "1-4",
@@ -70,7 +75,7 @@ export const MENU_CONFIG = [
         id: "5-1",
         title: "道路闪烁",
         path: "/material/highLightRoad",
-        fileName: "2-1_highLightRoad.js",
+        fileName: "5-1_highLightRoad.js",
       },
       {
         id: "5-2",
@@ -185,12 +190,13 @@ export const MENU_CONFIG = [
         title: "3D_Tiles",
         path: "/sandcastle/3dTiles",
         fileName: "10-2_3D_Tiles.js",
-      },{
+      },
+      {
         id: "10-3",
         title: "feature_pick",
         path: "/sandcastle/feature_pick",
         fileName: "10-3_feature_pick.js",
-      }
+      },
     ],
   },
 ];

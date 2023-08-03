@@ -26,11 +26,16 @@ export const removePrimitiveById = (id) => {
 };
 
 export const removeStageById = (id) => {
+  const viewer = window.viewer;
   let stages = viewer.scene.postProcessStages;
   for (let i = 0; i < stages.length; i++) {
     let stage = stages.get(i);
     if (stage.id === id) {
       stages.remove(stage);
+      const isDestroy = stage.isDestroyed();
+      if (!isDestroy) {
+        stage.destroy();
+      }
       break;
     }
   }

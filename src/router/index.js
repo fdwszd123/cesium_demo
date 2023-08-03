@@ -1,6 +1,8 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
 const particle_snow = () => import("/@/pages/particle/snow.vue");
+const particle_rain = () => import("/@/pages/particle/rain.vue");
+const particle_fog = () => import("/@/pages/particle/fog.vue");
 const other_skyBox = () => import("/@/pages/other/skyBox.vue");
 const other_terrain = () => import("/@/pages/other/terrain.vue");
 const camera_fly = () => import("/@/pages/camera/fly.vue");
@@ -9,7 +11,8 @@ const material_highLightRoad = () =>
 
 const sandcastle_3dModel = () => import("/@/pages/sandcastle/3dModel.vue");
 const sandcastle_3dTiles = () => import("/@/pages/sandcastle/3dTiles.vue");
-const sandcastle_feature_pick = () => import("/@/pages/sandcastle/feature_pick.vue");
+const sandcastle_feature_pick = () =>
+  import("/@/pages/sandcastle/feature_pick.vue");
 
 const routes = [
   {
@@ -22,11 +25,21 @@ const routes = [
         name: "particle_snow",
         component: particle_snow,
       },
+      {
+        path: "rain",
+        name: "particle_rain",
+        component: particle_rain,
+      },
+      {
+        path: "fog",
+        name: "particle_fog",
+        component: particle_fog,
+      },
     ],
   },
   {
     path: "/camera",
-    name: "particle",
+    name: "camera",
     redirect: "/camera/fly",
     children: [
       {
@@ -79,12 +92,12 @@ const routes = [
         path: "3dTiles",
         name: "sandcastle_3dTiles",
         component: sandcastle_3dTiles,
-      },{
+      },
+      {
         path: "feature_pick",
         name: "sandcastle_feature_pick",
         component: sandcastle_feature_pick,
       },
-     
     ],
   },
 ];
