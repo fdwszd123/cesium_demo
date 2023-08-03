@@ -1,8 +1,29 @@
 import { message } from "ant-design-vue";
 import { DEFAULT_VIEW_RECTANGLE } from "/@/common/config/cesium.js";
-import { removeEntityByName, removePrimitiveById } from "./cesium";
+import {
+  removeEntityByName,
+  removePrimitiveById,
+  removeStageById,
+} from "./cesium";
 import * as Cesium from "cesium";
 const destoryMap = {
+  "10-3": {
+    name: "feature_pick",
+    method: () => {
+      removePrimitiveById("feature_pick");
+      //取消监听事件
+      let handler = window.viewer.screenSpaceEventHandler;
+      handler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK);
+      handler.removeInputAction(Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
+      //删除添加的后处理阶段
+
+      removeStageById("feature_pick");
+      window.viewer.camera.flyHome(3);
+
+      return 1;
+    },
+  },
   "10-2": {
     name: "3D_Tiles",
     method: () => {

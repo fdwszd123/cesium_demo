@@ -185,6 +185,11 @@ export const MENU_CONFIG = [
         title: "3D_Tiles",
         path: "/sandcastle/3dTiles",
         fileName: "10-2_3D_Tiles.js",
+      },{
+        id: "10-3",
+        title: "feature_pick",
+        path: "/sandcastle/feature_pick",
+        fileName: "10-3_feature_pick.js",
       }
     ],
   },
