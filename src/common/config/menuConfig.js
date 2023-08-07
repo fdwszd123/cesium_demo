@@ -48,10 +48,14 @@ export const MENU_CONFIG = [
       {
         id: "3-1",
         title: "底层打点",
+        path: "/mark/primitive",
+        fileName: "3-1_primitive.js",
       },
       {
         id: "3-2",
         title: "聚合",
+        path: "/mark/combine",
+        fileName: "3-1_combine.js",
       },
     ],
   },

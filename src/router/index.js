@@ -9,10 +9,10 @@ const particle_fog = () => import("/@/pages/particle/fog.vue");
 // 火焰
 const particle_fire = () => import("/@/pages/particle/fire.vue");
 
-
 const other_skyBox = () => import("/@/pages/other/skyBox.vue");
 const other_terrain = () => import("/@/pages/other/terrain.vue");
 const camera_fly = () => import("/@/pages/camera/fly.vue");
+const mark_primitive = () => import("/@/pages/mark/primitive.vue");
 const material_highLightRoad = () =>
   import("/@/pages/material/highLightRoad.vue");
 
@@ -58,6 +58,18 @@ const routes = [
         path: "fly",
         name: "camera_fly",
         component: camera_fly,
+      },
+    ],
+  },
+  {
+    path: "/mark",
+    name: "mark",
+    redirect: "/mark/primitive",
+    children: [
+      {
+        path: "primitive",
+        name: "mark_primitive",
+        component: mark_primitive,
       },
     ],
   },

@@ -8,6 +8,17 @@ import {
 } from "./cesium";
 import * as Cesium from "cesium";
 const destroyMap = {
+  "3-1": {
+    name: "snow",
+    method: () => {
+      removePrimitiveById("mark_primitive");
+      let addressCardEl = document.getElementById("place_info");
+      addressCardEl.style.display = "none";
+      addressCardEl && window.viewer.container.removeChild(addressCardEl);
+      window.viewer.camera.flyHome(3);
+      return 1;
+    },
+  },
   "1-1": {
     name: "snow",
     method: () => {
@@ -105,14 +116,14 @@ const destroyMap = {
     },
   },
 };
-class DestoryEffect {
+class DestroyEffect {
   constructor() {
     this.viewer = window.viewer;
     this.destroyMap = destroyMap;
   }
-  destory(id) {
+  destroy(id) {
     let res = this.destroyMap[id].method();
     res ? message.success("删除成功") : message.error("删除失败");
   }
 }
-export default new DestoryEffect();
+export default new DestroyEffect();

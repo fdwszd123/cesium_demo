@@ -52,7 +52,7 @@ import CodeBlock from "/@/components/codeBlock.vue";
 import { h, ref, Suspense, watch, reactive, toRefs, toRef } from "vue";
 import { useRoute } from "vue-router";
 import { getMenuItemByPath, getMenuItemById } from "/@/utils/menu";
-import DestoryEffect from "/@/utils/destoryEffect";
+import DestroyEffect from "/@/utils/destroyEffect";
 const route = useRoute();
 const fileName = ref();
 const effect = reactive({
@@ -114,7 +114,7 @@ const viewCode = (id) => {
   open.value = true;
 };
 const delEffect = (id) => {
-  DestoryEffect.destory(id);
+  DestroyEffect.destroy(id);
   for (let i = 0; i < effect.ids.length; i++) {
     if (effect.ids[i].id === id) {
       const { ids } = toRefs(effect);
