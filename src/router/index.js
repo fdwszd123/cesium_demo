@@ -13,6 +13,7 @@ const other_skyBox = () => import("/@/pages/other/skyBox.vue");
 const other_terrain = () => import("/@/pages/other/terrain.vue");
 const camera_fly = () => import("/@/pages/camera/fly.vue");
 const mark_primitive = () => import("/@/pages/mark/primitive.vue");
+const mark_combine = () => import("/@/pages/mark/combine.vue");
 const material_highLightRoad = () =>
   import("/@/pages/material/highLightRoad.vue");
 
@@ -70,6 +71,11 @@ const routes = [
         path: "primitive",
         name: "mark_primitive",
         component: mark_primitive,
+      },
+      {
+        path: "combine",
+        name: "mark_combine",
+        component: mark_combine,
       },
     ],
   },

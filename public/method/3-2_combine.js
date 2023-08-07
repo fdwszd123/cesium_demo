@@ -1,12 +1,7 @@
-<template></template>
-
-<script setup>
 import * as Cesium from "cesium";
-import { removeDataSourceById } from "/@/utils/cesium";
 const viewer = window.viewer;
 const geoJsonLoader = new Cesium.GeoJsonDataSource();
 geoJsonLoader.load("/json/chuzhong.geojson").then((dataSource) => {
-  removeDataSourceById("mark_combine");
   dataSource.id = "mark_combine";
   viewer.dataSources.add(dataSource);
   //设置聚合参数
@@ -72,6 +67,3 @@ function combineIconAndLabel(url, label, size) {
   });
   return promise;
 }
-</script>
-
-<style scoped></style>

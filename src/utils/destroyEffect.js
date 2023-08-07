@@ -5,11 +5,20 @@ import {
   removeEntityByName,
   removePrimitiveById,
   removeStageById,
+  removeDataSourceById,
 } from "./cesium";
 import * as Cesium from "cesium";
 const destroyMap = {
+  "3-2": {
+    name: "mark_combine",
+    method: () => {
+      removeDataSourceById("mark_combine");
+
+      return 1;
+    },
+  },
   "3-1": {
-    name: "snow",
+    name: "mark_primitive",
     method: () => {
       removePrimitiveById("mark_primitive");
       let addressCardEl = document.getElementById("place_info");

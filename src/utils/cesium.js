@@ -40,3 +40,16 @@ export const removeStageById = (id) => {
     }
   }
 };
+
+//根据id移除dataSource
+
+export const removeDataSourceById = (id) => {
+  const viewer = window.viewer;
+  const dataSources = viewer.dataSources;
+  for (let i = 0; i < dataSources.length; i++) {
+    const dataSource = dataSources.get(i);
+    if (dataSource.id === id) {
+      dataSources.remove(dataSource);
+    }
+  }
+};

@@ -55,7 +55,7 @@ export const MENU_CONFIG = [
         id: "3-2",
         title: "聚合",
         path: "/mark/combine",
-        fileName: "3-1_combine.js",
+        fileName: "3-2_combine.js",
       },
     ],
   },
