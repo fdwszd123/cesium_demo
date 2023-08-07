@@ -102,7 +102,8 @@ const destroyMap = {
   "5-1": {
     name: "道路闪烁",
     method: () => {
-      window.viewer.dataSources.removeAll();
+      removeDataSourceById("hightLightRoad");
+      
       window.viewer.camera.flyHome(3);
 
       return 1;

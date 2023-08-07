@@ -5,11 +5,15 @@
 <script setup>
 import * as Cesium from "cesium";
 import LineFlickerMaterialProperty from "/@/utils/lineMaterial.js";
-
+import { removeDataSourceById } from "/@/utils/cesium";
 const viewer = window.viewer;
 Cesium.GeoJsonDataSource.load("/json/qingdaoRoad.geojson")
   .then((road) => {
+    removeDataSourceById("hightLightRoad");
+
+    road.id = "hightLightRoad";
     viewer.dataSources.add(road);
+
     //实体的集合
     const entities = road.entities.values;
     //异步设置相机以查看提供的实体、实体或数据源
