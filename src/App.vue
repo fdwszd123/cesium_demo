@@ -42,6 +42,8 @@ const init = async () => {
   });
   window.viewer = viewer;
   viewer.cesiumWidget.creditContainer.style.display = "none";
+  //显示帧率信息
+  viewer.scene.debugShowFramesPerSecond = true;
   //加载arc地图
   const arcGisMap = await Cesium.ArcGisMapServerImageryProvider.fromUrl(
     "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"

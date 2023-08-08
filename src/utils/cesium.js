@@ -50,6 +50,7 @@ export const removeDataSourceById = (id) => {
     const dataSource = dataSources.get(i);
     if (dataSource.id === id) {
       dataSources.remove(dataSource);
+      break;
     }
   }
 };

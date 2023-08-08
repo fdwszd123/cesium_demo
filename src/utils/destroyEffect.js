@@ -103,9 +103,17 @@ const destroyMap = {
     name: "道路闪烁",
     method: () => {
       removeDataSourceById("hightLightRoad");
-      
+
       window.viewer.camera.flyHome(3);
 
+      return 1;
+    },
+  },
+  "5-2": {
+    name: "道路穿梭",
+    method: () => {
+      removePrimitiveById("through_road");
+      window.viewer.camera.flyHome(3);
       return 1;
     },
   },

@@ -16,7 +16,7 @@ const mark_primitive = () => import("/@/pages/mark/primitive.vue");
 const mark_combine = () => import("/@/pages/mark/combine.vue");
 const material_highLightRoad = () =>
   import("/@/pages/material/highLightRoad.vue");
-
+const material_throughRoad = () => import("/@/pages/material/throughRoad.vue");
 const sandcastle_3dModel = () => import("/@/pages/sandcastle/3dModel.vue");
 const sandcastle_3dTiles = () => import("/@/pages/sandcastle/3dTiles.vue");
 const sandcastle_feature_pick = () =>
@@ -105,6 +105,11 @@ const routes = [
         path: "highLightRoad",
         name: "material_highLightRoad",
         component: material_highLightRoad,
+      },
+      {
+        path: "throughRoad",
+        name: "material_throughRoad",
+        component: material_throughRoad,
       },
     ],
   },

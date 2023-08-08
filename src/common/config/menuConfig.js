@@ -59,20 +59,20 @@ export const MENU_CONFIG = [
       },
     ],
   },
-  {
-    id: "4",
-    title: "服务加载",
-    children: [
-      {
-        id: "4-1",
-        title: "xyz瓦片",
-      },
-      {
-        id: "4-2",
-        title: "3D Tiles",
-      },
-    ],
-  },
+  // {
+  //   id: "4",
+  //   title: "服务加载",
+  //   children: [
+  //     {
+  //       id: "4-1",
+  //       title: "xyz瓦片",
+  //     },
+  //     {
+  //       id: "4-2",
+  //       title: "3D Tiles",
+  //     },
+  //   ],
+  // },
   {
     id: "5",
     title: "材质",
@@ -86,6 +86,8 @@ export const MENU_CONFIG = [
       {
         id: "5-2",
         title: "道路穿梭",
+        path: "/material/throughRoad",
+        fileName: "5-2_throughRoad.js",
       },
       {
         id: "5-3",
