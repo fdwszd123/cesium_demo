@@ -1,7 +1,11 @@
 <template>
   <div class="step-wrap">
     <a-collapse :ghost="true" :bordered="false">
-      <a-collapse-panel key="1" header="操作撤销">
+      <a-collapse-panel key="1" header="操作">
+        <a-button @click="exportSceneToImage" class="export-btn" type="primary"
+          >导出场景为图片</a-button
+        >
+
         <a-table
           :pagination="false"
           :dataSource="dataSource"
@@ -46,6 +50,7 @@
 </template>
 
 <script setup>
+import saveToImage from "/@/utils/exportImage";
 import { FileSearchOutlined, DeleteOutlined } from "@ant-design/icons-vue";
 import { message } from "ant-design-vue";
 import CodeBlock from "/@/components/codeBlock.vue";
@@ -137,11 +142,18 @@ const copyCode = () => {
   }
   document.body.removeChild(textarea);
 };
+
+const exportSceneToImage = () => {
+  saveToImage(window.viewer);
+};
 </script>
 
 <style scoped>
 :deep(.ant-collapse-item .ant-collapse-header) {
   color: #fff; /* 修改标题的字体颜色为红色 */
   font-size: 16px;
+}
+.export-btn {
+  margin-bottom: 10px;
 }
 </style>

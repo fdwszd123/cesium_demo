@@ -45,7 +45,7 @@ const initialOrientation = new Cesium.HeadingPitchRoll.fromDegrees(
   -21.34390550872461,
   0.0716951918898415
 );
-viewer.scene.camera.setView({
+viewer.scene.camera.flyTo({
   destination: initialPosition,
   orientation: initialOrientation,
   endTransform: Cesium.Matrix4.IDENTITY,

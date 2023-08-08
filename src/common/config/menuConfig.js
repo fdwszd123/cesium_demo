@@ -89,10 +89,10 @@ export const MENU_CONFIG = [
         path: "/material/throughRoad",
         fileName: "5-2_throughRoad.js",
       },
-      {
-        id: "5-3",
-        title: "辐射图",
-      },
+      // {
+      //   id: "5-3",
+      //   title: "辐射图",
+      // },
       {
         id: "5-4",
         title: "圆扩散",

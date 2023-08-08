@@ -52,7 +52,7 @@ const handleFeatures = (features) => {
 };
 const { features } = await getMethodContent("/json/chuzhong.geojson");
 handleFeatures(features);
-viewer.camera.setView({
+viewer.camera.flyTo({
   // 从以度为单位的经度和纬度值返回笛卡尔3位置。
   destination: Cesium.Cartesian3.fromDegrees(120.36, 36.09, 40000),
 });
