@@ -93,22 +93,24 @@ export const MENU_CONFIG = [
       //   id: "5-3",
       //   title: "辐射图",
       // },
-      {
-        id: "5-4",
-        title: "圆扩散",
-      },
+      // {
+      //   id: "5-4",
+      //   title: "圆扩散",
+      // },
       {
         id: "5-5",
         title: "四色图",
+        path: "/material/colorLayer",
+        fileName: "5-5_colorLayer.js",
       },
       {
         id: "5-6",
         title: "流动水面",
       },
-      {
-        id: "5-7",
-        title: "天空盒",
-      },
+      // {
+      //   id: "5-7",
+      //   title: "天空盒",
+      // },
     ],
   },
   {

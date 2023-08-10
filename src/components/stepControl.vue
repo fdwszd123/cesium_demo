@@ -2,7 +2,11 @@
   <div class="step-wrap">
     <a-collapse :ghost="true" :bordered="false">
       <a-collapse-panel key="1" header="操作">
-        <a-button @click="exportSceneToImage" class="export-btn" type="primary"
+        <a-button
+          style="width: 100%"
+          @click="exportSceneToImage"
+          class="export-btn"
+          type="primary"
           >导出场景为图片</a-button
         >
 

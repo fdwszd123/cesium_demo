@@ -117,6 +117,15 @@ const destroyMap = {
       return 1;
     },
   },
+  "5-5": {
+    name: "四色图",
+    method: () => {
+      removePrimitiveById("label_center");
+      removePrimitiveById("color_layer");
+      window.viewer.camera.flyHome(3);
+      return 1;
+    },
+  },
   "9-1": {
     name: "天空盒",
     method: () => {
