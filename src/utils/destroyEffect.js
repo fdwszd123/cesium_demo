@@ -126,6 +126,14 @@ const destroyMap = {
       return 1;
     },
   },
+  "5-6": {
+    name: "流动水面",
+    method: () => {
+      removePrimitiveById("water");
+      window.viewer.camera.flyHome(3);
+      return 1;
+    },
+  },
   "9-1": {
     name: "天空盒",
     method: () => {

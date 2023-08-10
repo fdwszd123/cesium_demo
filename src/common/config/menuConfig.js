@@ -106,6 +106,8 @@ export const MENU_CONFIG = [
       {
         id: "5-6",
         title: "流动水面",
+        path: "/material/water",
+        fileName: "5-6_water.js",
       },
       // {
       //   id: "5-7",

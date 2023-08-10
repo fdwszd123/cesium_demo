@@ -18,6 +18,7 @@ const material_highLightRoad = () =>
   import("/@/pages/material/highLightRoad.vue");
 const material_throughRoad = () => import("/@/pages/material/throughRoad.vue");
 const material_colorLayer = () => import("/@/pages/material/colorLayer.vue");
+const material_water = () => import("/@/pages/material/water.vue");
 const sandcastle_3dModel = () => import("/@/pages/sandcastle/3dModel.vue");
 const sandcastle_3dTiles = () => import("/@/pages/sandcastle/3dTiles.vue");
 const sandcastle_feature_pick = () =>
@@ -116,6 +117,11 @@ const routes = [
         path: "colorLayer",
         name: "material_colorLayer",
         component: material_colorLayer,
+      },
+      {
+        path: "water",
+        name: "material_water",
+        component: material_water,
       },
     ],
   },
